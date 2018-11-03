@@ -49,25 +49,25 @@ public class MainScene extends GVRMain {
         mSphere1 = new GVRSphereSceneObject(gvrContext);
         mSphere1.getTransform().setPosition(-2, -3, -10);
         mSphere1.getTransform().setScale(0.5f,0.5f,0.5f);
-        mSphere.setName("2");
+        mSphere1.setName("2");
         gvrContext.getMainScene().addSceneObject(mSphere1);
 
         mSphere2 = new GVRSphereSceneObject(gvrContext);
         mSphere2.getTransform().setPosition(0, -3, -10);
         mSphere2.getTransform().setScale(0.5f,0.5f,0.5f);
-        mSphere.setName("3");
+        mSphere2.setName("3");
         gvrContext.getMainScene().addSceneObject(mSphere2);
 
         mSphere3 = new GVRSphereSceneObject(gvrContext);
         mSphere3.getTransform().setPosition(2, -3, -10);
         mSphere3.getTransform().setScale(0.5f,0.5f,0.5f);
-        mSphere.setName("4");
+        mSphere3.setName("4");
         gvrContext.getMainScene().addSceneObject(mSphere3);
 
         mSphere4 = new GVRSphereSceneObject(gvrContext);
         mSphere4.getTransform().setPosition(4, -3, -10);
         mSphere4.getTransform().setScale(0.5f,0.5f,0.5f);
-        mSphere.setName("5");
+        mSphere4.setName("5");
         gvrContext.getMainScene().addSceneObject(mSphere4);
 
 //
@@ -143,10 +143,10 @@ public class MainScene extends GVRMain {
 //        gvrContext.getMainScene().addSceneObject(lightNode);
 
         mPlayerObj = new GVRVideoPlayerObject(gvrContext);
-        mPlayerObj.setPickingEnabled(true);
-        mPlayerObj.loadVideo("One Minute Math Challenge.mp4");
+        mPlayerObj.loadVideo("vid2.mp4");
         mPlayerObj.setLooping(true);
         mPlayerObj.play();
+
 
         gvrContext.getMainScene().addSceneObject(mPlayerObj);
     }
@@ -168,7 +168,8 @@ public class MainScene extends GVRMain {
 
     public void onPause() {
         if (mPlayerObj != null)
-            mPlayerObj.onPause();
+            mPlayerObj.loadVideo("One Minute Math Challenge.mp4");
+            mPlayerObj.play();
     }
 
     public void onTouchEvent(MotionEvent event){
@@ -183,4 +184,10 @@ public class MainScene extends GVRMain {
                 break;
         }
     }
+
+    public void onDestroy(){
+        mPlayerObj.loadVideo("vid2.mp4");
+        mPlayerObj.play();
+    }
+
 }

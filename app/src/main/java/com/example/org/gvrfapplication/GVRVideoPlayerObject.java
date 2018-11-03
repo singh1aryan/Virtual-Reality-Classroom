@@ -42,7 +42,9 @@ public class GVRVideoPlayerObject extends GVRSceneObject{
         GVRVideoSceneObject video = new GVRVideoSceneObject(gvrContext, mesh, mPlayer, GVRVideoSceneObject.GVRVideoType.MONO);
         video.getTransform().setPosition(0,0,-15);
         video.getTransform().setScale(10f, 5f, 5f);
-
+//        if(mMediaPlayer.getDuration() == 5000){
+//            mMediaPlayer.pause();
+//        }
         addChildObject(video);
     }
 

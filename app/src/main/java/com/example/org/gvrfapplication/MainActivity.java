@@ -90,7 +90,14 @@ public class MainActivity extends GVRActivity {
         super.onPause();
         main.onPause();
     }
-//
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        main.onDestroy();
+    }
+
+    //
 //    @Override
 //    public boolean onTouchEvent(MotionEvent event) {
 //        main.onTouchEvent(event);
