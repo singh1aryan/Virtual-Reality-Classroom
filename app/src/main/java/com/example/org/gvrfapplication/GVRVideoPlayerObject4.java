@@ -1,5 +1,4 @@
 package com.example.org.gvrfapplication;
-
 import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 
@@ -14,12 +13,12 @@ import org.gearvrf.scene_objects.GVRVideoSceneObjectPlayer;
 
 import java.io.IOException;
 
-public class GVRVideoPlayerObject extends GVRSceneObject{
+public class GVRVideoPlayerObject4 extends GVRSceneObject{
 
-    private final GVRVideoSceneObjectPlayer<?> mPlayer,mPlayer1;
-    private final MediaPlayer mMediaPlayer,mMediaPlayer1;
+    private final GVRVideoSceneObjectPlayer<?> mPlayer;
+    private final MediaPlayer mMediaPlayer;
 
-    public GVRVideoPlayerObject(GVRContext gvrContext) throws IOException {
+    public GVRVideoPlayerObject4(GVRContext gvrContext) throws IOException {
         super(gvrContext);
 
         GVRSphereSceneObject sphere = new GVRSphereSceneObject(gvrContext, 72, 144, false);
@@ -42,12 +41,9 @@ public class GVRVideoPlayerObject extends GVRSceneObject{
         mMediaPlayer = new MediaPlayer();
         mPlayer = GVRVideoSceneObject.makePlayerInstance(mMediaPlayer);
 
-        mMediaPlayer1 = new MediaPlayer();
-        mPlayer1 = GVRVideoSceneObject.makePlayerInstance(mMediaPlayer1);
-
         GVRVideoSceneObject video = new GVRVideoSceneObject(gvrContext, mesh, mPlayer, GVRVideoSceneObject.GVRVideoType.MONO);
         video.setName("0");
-        video.getTransform().setPosition(0,0,-15);
+        video.getTransform().setPosition(0,5,-15);
         video.getTransform().setScale(10f, 5f, 5f);
 
         addChildObject(video);
