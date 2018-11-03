@@ -25,7 +25,7 @@ public class GVRVideoPlayerObject extends GVRSceneObject{
         GVRSphereSceneObject sphere = new GVRSphereSceneObject(gvrContext, 72, 144, false);
         //GVRMesh mesh = sphere.getRenderData().getMesh();
 
-        GVRCubeSceneObject cubeSceneObject = new GVRCubeSceneObject(gvrContext,false);
+        GVRCubeSceneObject cubeSceneObject = new GVRCubeSceneObject(gvrContext,true);
         GVRMesh mesh = cubeSceneObject.getRenderData().getMesh();
 
 //        GVRMesh board = gvrContext.getAssetLoader().loadMesh(

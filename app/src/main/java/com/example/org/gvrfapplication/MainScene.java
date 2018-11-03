@@ -1,5 +1,7 @@
 package com.example.org.gvrfapplication;
 
+import android.view.MotionEvent;
+
 import org.gearvrf.GVRContext;
 import org.gearvrf.GVRMain;
 import org.gearvrf.GVRMaterial;
@@ -18,13 +20,19 @@ public class MainScene extends GVRMain {
     GVRSphereSceneObject mSphere3;
     GVRSphereSceneObject mSphere4;
 
+    PickHandler pickHandler;
+
 
     private GVRVideoPlayerObject mPlayerObj = null;
     // z axis goes up down
     // y goes sideways and x goes through us
 
+
     @Override
     public void onInit(GVRContext gvrContext) throws Throwable {
+
+
+        pickHandler = new PickHandler();
 
         GVRMaterial flatMaterial;
         flatMaterial = new GVRMaterial(gvrContext);
@@ -35,7 +43,7 @@ public class MainScene extends GVRMain {
         mSphere.getTransform().setPosition(-4, -3, -10);
         mSphere.getTransform().setScale(0.5f,0.5f,0.5f);
         mSphere.setName("1");
-        mSphere.getRenderData().setMaterial(flatMaterial);
+//        mSphere.getRenderData().setMaterial(flatMaterial);
         gvrContext.getMainScene().addSceneObject(mSphere);
 
         mSphere1 = new GVRSphereSceneObject(gvrContext);
@@ -61,6 +69,7 @@ public class MainScene extends GVRMain {
         mSphere4.getTransform().setScale(0.5f,0.5f,0.5f);
         mSphere.setName("5");
         gvrContext.getMainScene().addSceneObject(mSphere4);
+
 //
 //        //Create Cube
 //        mCube = new GVRCubeSceneObject(gvrContext);
@@ -134,6 +143,7 @@ public class MainScene extends GVRMain {
 //        gvrContext.getMainScene().addSceneObject(lightNode);
 
         mPlayerObj = new GVRVideoPlayerObject(gvrContext);
+        mPlayerObj.setPickingEnabled(true);
         mPlayerObj.loadVideo("One Minute Math Challenge.mp4");
         mPlayerObj.setLooping(true);
         mPlayerObj.play();
@@ -159,5 +169,18 @@ public class MainScene extends GVRMain {
     public void onPause() {
         if (mPlayerObj != null)
             mPlayerObj.onPause();
+    }
+
+    public void onTouchEvent(MotionEvent event){
+        switch (event.getAction() & MotionEvent.ACTION_MASK)
+        {
+            case MotionEvent.ACTION_BUTTON_PRESS:
+            if(pickHandler.pickedObject != null){
+                pickHandler.pickedObject.getRenderData().getMaterial().setDiffuseColor(0,0,1,1);
+            }
+            break;
+            default:
+                break;
+        }
     }
 }

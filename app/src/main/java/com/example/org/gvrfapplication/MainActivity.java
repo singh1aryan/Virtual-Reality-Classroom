@@ -1,6 +1,7 @@
 package com.example.org.gvrfapplication;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
 
 import org.gearvrf.GVRActivity;
 import org.gearvrf.GVRAndroidResource;
@@ -33,7 +34,6 @@ public class MainActivity extends GVRActivity {
 
     private final class Main extends GVRMain {
 
-        Main main = new Main();
         @Override
         public void onInit(GVRContext gvrContext) throws Throwable {
 
@@ -59,10 +59,6 @@ public class MainActivity extends GVRActivity {
 //            mNode = new GVRSceneObject(gvrContext);
 //            gvrContext.getMainScene().addSceneObject(mNode);
 
-            mTrexObj = gvrContext.getAssetLoader().loadModel("trex_mesh.fbx");
-            mTrexObj.getTransform().setPosition(4,-6,-8);
-            mTrexObj.attachComponent(new GVRBillboard(gvrContext, new Vector3f(0f,1f,0f)));
-            mNode.addChildObject(mTrexObj);
         }
 
         @Override
@@ -94,4 +90,10 @@ public class MainActivity extends GVRActivity {
         super.onPause();
         main.onPause();
     }
+//
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event) {
+//        main.onTouchEvent(event);
+//        return super.onTouchEvent(event);
+//    }
 }
