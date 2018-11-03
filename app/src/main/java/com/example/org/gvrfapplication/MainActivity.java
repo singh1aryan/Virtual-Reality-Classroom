@@ -11,6 +11,8 @@ import org.gearvrf.GVRTexture;
 
 public class MainActivity extends GVRActivity {
 
+
+    MainScene main;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,23 +21,25 @@ public class MainActivity extends GVRActivity {
          * Set Main Scene
          * It will be displayed when app starts
          */
+        main = new MainScene();
         setMain(new MainScene());
     }
 
     private final class Main extends GVRMain {
 
+        Main main = new Main();
         @Override
         public void onInit(GVRContext gvrContext) throws Throwable {
 
             //Load texture
-            GVRTexture texture = gvrContext.getAssetLoader().loadTexture(new GVRAndroidResource(gvrContext, R.drawable.__default_splash_screen__));
-
-            //Create a rectangle with the texture we just loaded
-            GVRSceneObject quad = new GVRSceneObject(gvrContext, 4, 2, texture);
-            quad.getTransform().setPosition(0, 0, -3);
-
-            //Add rectangle to the scene
-            gvrContext.getMainScene().addSceneObject(quad);
+//            GVRTexture texture = gvrContext.getAssetLoader().loadTexture(new GVRAndroidResource(gvrContext, R.drawable.__default_splash_screen__));
+//
+//            //Create a rectangle with the texture we just loaded
+//            GVRSceneObject quad = new GVRSceneObject(gvrContext, 4, 2, texture);
+//            quad.getTransform().setPosition(0, 0, -3);
+//
+//            //Add rectangle to the scene
+//            gvrContext.getMainScene().addSceneObject(quad);
         }
 
         @Override
@@ -47,5 +51,17 @@ public class MainActivity extends GVRActivity {
         public void onStep() {
             //Add update logic here
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        main.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        main.onPause();
     }
 }
