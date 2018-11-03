@@ -1,15 +1,8 @@
 package com.example.org.gvrfapplication;
 
-import org.gearvrf.GVRAndroidResource;
 import org.gearvrf.GVRContext;
 import org.gearvrf.GVRMain;
-import org.gearvrf.GVRMaterial;
-import org.gearvrf.GVRMesh;
-import org.gearvrf.GVRObjectPicker;
-import org.gearvrf.GVRPointLight;
 import org.gearvrf.GVRSceneObject;
-import org.gearvrf.GVRTexture;
-import org.gearvrf.scene_objects.GVRCubeSceneObject;
 import org.gearvrf.scene_objects.GVRSphereSceneObject;
 
 /**
@@ -105,7 +98,7 @@ public class MainScene extends GVRMain {
 //        gvrContext.getMainScene().addSceneObject(lightNode);
 
         mPlayerObj = new GVRVideoPlayerObject(gvrContext);
-        mPlayerObj.loadVideo("One Minute Math Challenge_2dp.mp4");
+        mPlayerObj.loadVideo("One Minute Math Challenge.mp4");
         mPlayerObj.setLooping(true);
         mPlayerObj.play();
 

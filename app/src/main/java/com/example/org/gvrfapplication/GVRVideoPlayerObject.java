@@ -23,9 +23,10 @@ public class GVRVideoPlayerObject extends GVRSceneObject{
         super(gvrContext);
 
         GVRSphereSceneObject sphere = new GVRSphereSceneObject(gvrContext, 72, 144, false);
-        GVRMesh mesh = sphere.getRenderData().getMesh();
+        //GVRMesh mesh = sphere.getRenderData().getMesh();
 
         GVRCubeSceneObject cubeSceneObject = new GVRCubeSceneObject(gvrContext,false);
+        GVRMesh mesh = cubeSceneObject.getRenderData().getMesh();
 
 //        GVRMesh board = gvrContext.getAssetLoader().loadMesh(
 //                new GVRAndroidResource(gvrContext, "rec.fbx")
@@ -35,12 +36,12 @@ public class GVRVideoPlayerObject extends GVRSceneObject{
 //        dinoObj.getTransform().rotateByAxis(-90, 1f, 0f, 0f);
 //        gvrContext.getMainScene().addSceneObject(dinoObj);
 
-
         mMediaPlayer = new MediaPlayer();
         mPlayer = GVRVideoSceneObject.makePlayerInstance(mMediaPlayer);
 
         GVRVideoSceneObject video = new GVRVideoSceneObject(gvrContext, mesh, mPlayer, GVRVideoSceneObject.GVRVideoType.MONO);
-        video.getTransform().setScale(10f, 10f, 10f);
+        video.getTransform().setPosition(0,0,-15);
+        video.getTransform().setScale(10f, 5f, 5f);
 
         addChildObject(video);
     }
