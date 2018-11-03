@@ -2,6 +2,7 @@ package com.example.org.gvrfapplication;
 
 import org.gearvrf.GVRContext;
 import org.gearvrf.GVRMain;
+import org.gearvrf.GVRMaterial;
 import org.gearvrf.GVRSceneObject;
 import org.gearvrf.scene_objects.GVRSphereSceneObject;
 
@@ -12,6 +13,10 @@ public class MainScene extends GVRMain {
 
     GVRSceneObject mCube;
     GVRSphereSceneObject mSphere;
+    GVRSphereSceneObject mSphere1;
+    GVRSphereSceneObject mSphere2;
+    GVRSphereSceneObject mSphere3;
+    GVRSphereSceneObject mSphere4;
 
 
     private GVRVideoPlayerObject mPlayerObj = null;
@@ -21,10 +26,41 @@ public class MainScene extends GVRMain {
     @Override
     public void onInit(GVRContext gvrContext) throws Throwable {
 
+        GVRMaterial flatMaterial;
+        flatMaterial = new GVRMaterial(gvrContext);
+        flatMaterial.setColor(1.0f, 0.0f, 0.0f);
+
         //Create Sphere
-//        mSphere = new GVRSphereSceneObject(gvrContext);
-//        mSphere.getTransform().setPosition(1, 0, -3);
-//        gvrContext.getMainScene().addSceneObject(mSphere);
+        mSphere = new GVRSphereSceneObject(gvrContext);
+        mSphere.getTransform().setPosition(-4, -3, -10);
+        mSphere.getTransform().setScale(0.5f,0.5f,0.5f);
+        mSphere.setName("1");
+        mSphere.getRenderData().setMaterial(flatMaterial);
+        gvrContext.getMainScene().addSceneObject(mSphere);
+
+        mSphere1 = new GVRSphereSceneObject(gvrContext);
+        mSphere1.getTransform().setPosition(-2, -3, -10);
+        mSphere1.getTransform().setScale(0.5f,0.5f,0.5f);
+        mSphere.setName("2");
+        gvrContext.getMainScene().addSceneObject(mSphere1);
+
+        mSphere2 = new GVRSphereSceneObject(gvrContext);
+        mSphere2.getTransform().setPosition(0, -3, -10);
+        mSphere2.getTransform().setScale(0.5f,0.5f,0.5f);
+        mSphere.setName("3");
+        gvrContext.getMainScene().addSceneObject(mSphere2);
+
+        mSphere3 = new GVRSphereSceneObject(gvrContext);
+        mSphere3.getTransform().setPosition(2, -3, -10);
+        mSphere3.getTransform().setScale(0.5f,0.5f,0.5f);
+        mSphere.setName("4");
+        gvrContext.getMainScene().addSceneObject(mSphere3);
+
+        mSphere4 = new GVRSphereSceneObject(gvrContext);
+        mSphere4.getTransform().setPosition(4, -3, -10);
+        mSphere4.getTransform().setScale(0.5f,0.5f,0.5f);
+        mSphere.setName("5");
+        gvrContext.getMainScene().addSceneObject(mSphere4);
 //
 //        //Create Cube
 //        mCube = new GVRCubeSceneObject(gvrContext);
