@@ -1,5 +1,16 @@
-# GearVRf-template
-This is the project Template for Samsung GearVR Framework
+# VRClassroom
+This is the project Template for a Virtual Reality Classroom
+
+## API
+Using the samsung gear vr api
+
+1.The sxr documentation by samsung is not fully available to use.
+
+2.Made a video template for the classroom, which can be integrated with a 3d model to experience a classroom in VR.
+
+3.Made classroom 3D models in Autodesk maya and Sketch up which can be integrated in Unity.
+
+
 
 ## Getting Started
 Follow these steps to create projects for GearVR framework
