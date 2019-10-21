@@ -27,7 +27,10 @@ The default setup for template project is for Gear VR, so you don't need to chan
 Just need to copy your [Oculus signature file](https://developer.oculus.com/osig/) to `app/src/main/assets` folder.
 
 ### Screenshot
-<img src="app/src/main/java/com/example/org/gvrfapplication/Images/45452598_471112056745507_4269471193309904896_n.jpg" height="200" >
+<img width="500" src="app/src/main/java/com/example/org/gvrfapplication/Images/45452598_471112056745507_4269471193309904896_n.jpg" >
+<img width="500" alt="Screen Shot 2019-10-20 at 8 13 01 PM" src="https://user-images.githubusercontent.com/31454667/67168927-2f7e2f00-f376-11e9-83ff-2cb851a15123.png">
+<img width="500" alt="Screen Shot 2019-10-20 at 8 13 11 PM" src="https://user-images.githubusercontent.com/31454667/67168928-2f7e2f00-f376-11e9-90ea-bb7764d1b424.png">
+<img width="500" alt="Screen Shot 2019-10-20 at 8 13 18 PM" src="https://user-images.githubusercontent.com/31454667/67168929-2f7e2f00-f376-11e9-8570-927b37172a63.png">
 
 ### DayDream
 Perform the following steps to enable DayDream Mode
