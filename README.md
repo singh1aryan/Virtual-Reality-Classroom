@@ -1,16 +1,12 @@
 # VRClassroom
-This is the project Template for a Virtual Reality Classroom
+Hackathon project - Virtual Reality Classroom
+
+## Thought
+* This is a classroom for students with physical disabilities who find it hard to go to classes
+* They can enter a virtual classroom from their homes, where the teachers and other students are present, just like a normal classroom
 
 ## API
 Using the samsung gear vr api
-
-1.The sxr documentation by samsung is not fully available to use.
-
-2.Made a video template for the classroom, which can be integrated with a 3d model to experience a classroom in VR.
-
-3.Made classroom 3D models in Autodesk maya and Sketch up which can be integrated in Unity.
-
-
 
 ## Getting Started
 Follow these steps to create projects for GearVR framework
@@ -46,3 +42,16 @@ compile "org.gearvrf:backend_oculus:$gearvrfVersion"
 ```
 <meta-data android:name="com.samsung.android.vr.application.mode" android:value="vr_only"/>
 ```
+
+
+## Some updates
+* Quickstart for Google Cardboard for Android NDK - https://developers.google.com/cardboard/develop/c/quickstart
+* The Daydream View VR headset is no longer available for purchase. However, you can continue to use the existing Google VR SDK to update and distribute your apps to the Google Play Store, and make them available to users in the Daydream app.
+* There is a lot more stuff out there for VR in android, unity remains my best bet though
+
+## Helpful links
+* https://www.youtube.com/watch?v=1XDpJAK3wjw
+* https://www.androidauthority.com/how-to-make-an-android-vr-app-878248/
+* https://codelabs.developers.google.com/codelabs/vr_view_app_101/index.html?index=..%2F..index#0
+* https://stackoverflow.com/questions/46163869/how-to-install-google-vr-sdk-in-android-studio
+* https://arvr.google.com/daydream/smartphonevr/
